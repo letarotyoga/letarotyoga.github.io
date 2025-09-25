@@ -1,8 +1,7 @@
 Caito's new website
 ====================
 
-Built with love based on [Agency bootstrap theme ](https://startbootstrap.com/template-overviews/agency/)
-
+Built with love by Turo
 # How to use
 
 ###Portfolio 
