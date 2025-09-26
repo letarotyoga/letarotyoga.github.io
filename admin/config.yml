@@ -1,0 +1,114 @@
+backend:
+  name: github
+  repo: letarotyoga/letarotyoga.github.io
+  branch: main
+
+media_folder: "img/uploads"
+public_folder: "/img/uploads"
+
+site_url: "/"
+display_url: "/"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "events"
+    label: "Events"
+    folder: "_events"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Location", name: "location", widget: "string", required: false }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - { label: "Gallery", name: "gallery", widget: "list", field: {label: Image, name: image, widget: image}, required: false }
+      - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+
+  - name: "services"
+    label: "Services"
+    folder: "_services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Order", name: "order", widget: "number", value_type: "int", min: 1 }
+      - { label: "Icon/Image", name: "icon", widget: "image", required: false }
+      - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+      - { label: "Permalink", name: "permalink", widget: "string", required: false }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "_testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role (optional)", name: "role", widget: "string", required: false }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+      - { label: "Quote", name: "quote", widget: "text" }
+      - { label: "Order", name: "order", widget: "number", value_type: "int", min: 1 }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About Me"
+        name: "about"
+        file: "about/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Contact"
+        name: "contact"
+        file: "contact/index.html"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+          - { label: "Instructions", name: "body", widget: "markdown", required: false }
+
+  - name: "data"
+    label: "Site Settings"
+    files:
+      - label: "Navigation"
+        name: "navigation"
+        file: "_data/navigation.yml"
+        fields:
+          - label: "Menu Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+      - label: "Theme Colors"
+        name: "theme"
+        file: "_data/theme.yml"
+        fields:
+          - { label: "Accent", name: "color_accent", widget: "string" }
+          - { label: "Primary", name: "color_primary", widget: "string" }
+          - { label: "Deep Purple", name: "color_deep_purple", widget: "string" }
+          - { label: "Light Purple", name: "color_light_purple", widget: "string" }
+          - { label: "Pastel Purple", name: "color_pastel_purple", widget: "string" }
+          - { label: "Creme", name: "color_creme", widget: "string" }
+          - { label: "Grey", name: "color_grey", widget: "string" }
+          - { label: "Smoke", name: "color_smoke", widget: "string" }
+          - { label: "White", name: "color_white", widget: "string" }
+          - { label: "Black", name: "color_black", widget: "string" }
+      - label: "Site Images & Tagline"
+        name: "site"
+        file: "_data/site.yml"
+        fields:
+          - { label: "Site Tagline", name: "site_tagline", widget: "string", required: false }
+          - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+          - { label: "Events Hero", name: "events_hero_image", widget: "image", required: false }
+          - { label: "Services Hero", name: "services_hero_image", widget: "image", required: false }
+          - { label: "Testimonials Hero", name: "testimonials_hero_image", widget: "image", required: false }
+          - { label: "About Hero", name: "about_hero_image", widget: "image", required: false }
+          - { label: "Contact Hero", name: "contact_hero_image", widget: "image", required: false }
+
+# Netlify Identity (Decap CMS) works automatically when served on Netlify with Identity enabled.
