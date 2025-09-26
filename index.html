@@ -1,43 +1,20 @@
 ---
 layout: default
-title: {{ site.title }}
 ---
-<header class="hero" style="background-image:url('{{ site.data.site.hero_image }}')">
-  <div class="overlay">
-    <div class="container text-center">
-      <h1>{{ site.title }}</h1>
-      <p class="lead">{{ site.data.site.site_tagline }}</p>
-      <p style="margin-top:1rem">
-        <a class="btn btn-primary btn-lg" href="{{ '/services/' | relative_url }}">Explore Services</a>
-        <a class="btn btn-default btn-lg" href="{{ '/events/' | relative_url }}">Upcoming Events</a>
-      </p>
-    </div>
-  </div>
-</header>
-<section class="bg-creme">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="card">
-          <h3>Services</h3>
-          <p>Yoga, Tarot, and immersive retreats.</p>
-          <p><a class="btn btn-primary" href="{{ '/services/' | relative_url }}">View Services</a></p>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="card">
-          <h3>Events</h3>
-          <p>Workshops and community gatherings.</p>
-          <p><a class="btn btn-primary" href="{{ '/events/' | relative_url }}">See Events</a></p>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="card">
-          <h3>About Me</h3>
-          <p>Get to know the person behind Le Tarot Yoga.</p>
-          <p><a class="btn btn-primary" href="{{ '/about/' | relative_url }}">About Me</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+<div class="home">
+
+  <h1>Posts</h1>
+
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>

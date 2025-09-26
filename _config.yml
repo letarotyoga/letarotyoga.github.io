@@ -1,45 +1,4 @@
 title: Le Tarot Yoga
 email: letarotyoga@gmail.com
-description: "Tarot and Yoga experiences."
-baseurl: "" # the subpath of your site, e.g. /blog
-url: ""     # the base hostname & protocol for your site
-
-# Build settings
-markdown: kramdown
-
-collections:
-  events:
-    output: true
-    permalink: /events/:slug/
-  services:
-    output: true
-    permalink: /services/:slug/
-  testimonials:
-    output: false
-
-defaults:
-  - scope: { path: "" }
-    values:
-      layout: default
-  - scope: { path: "_events" }
-    values:
-      layout: event
-  - scope: { path: "_services" }
-    values:
-      layout: service
-
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
-
-# Include data files
-include:
-  - _data/navigation.yml
-  - _data/site.yml
-  - _data/theme.yml
-
-sass:
-  style: compressed
-
-# Permalinks
-permalink: pretty
+url: https://letarotyoga.github.io
+baseurl: "" 
