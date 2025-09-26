@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: letarotyoga/letarotyoga.github.io
+  branch: main
+
+media_folder: "img/uploads"
+public_folder: "/img/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "notes"
+    label: "Notes"
+    folder: "_notes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "data"
+    label: "Site Settings"
+    files:
+      - label: "Theme Colors"
+        name: "theme"
+        file: "_data/theme.yml"
+        fields:
+          - { label: "Accent", name: "color_accent", widget: "string" }
+          - { label: "Primary", name: "color_primary", widget: "string" }
+          - { label: "Deep Purple", name: "color_deep_purple", widget: "string" }
+          - { label: "Light Purple", name: "color_light_purple", widget: "string" }
+          - { label: "Pastel Purple", name: "color_pastel_purple", widget: "string" }
+          - { label: "Creme", name: "color_creme", widget: "string" }
+          - { label: "Grey", name: "color_grey", widget: "string" }
+          - { label: "Smoke", name: "color_smoke", widget: "string" }
+          - { label: "White", name: "color_white", widget: "string" }
+          - { label: "Black", name: "color_black", widget: "string" }
