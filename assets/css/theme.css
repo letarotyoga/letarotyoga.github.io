@@ -1,0 +1,11 @@
+---
+# enable Liquid to read _data/theme.yml
+---
+:root {
+  --color-accent: {{ site.data.theme.color_accent }};
+  --color-primary: {{ site.data.theme.color_primary }};
+  --color-light-purple: {{ site.data.theme.color_light_purple }};
+}
+a, a:hover { color: var(--color-accent); }
+.btn-primary { background: var(--color-primary); border-color: var(--color-primary); }
+.btn-primary:hover, .btn-primary:focus { background: var(--color-light-purple); border-color: var(--color-light-purple); }
